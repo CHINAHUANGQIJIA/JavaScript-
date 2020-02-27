@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>start</title>
+  </head>
+  <body>
+    <style>
+      #container {
+        width: 600px;
+        height: 400px;
+        background-color: aqua;
+        position: relative;
+      }
+      #box {
+        width: 60px;
+        height: 60px;
+        background-color: rgb(255, 0, 21);
+        position: absolute;
+      }
+    </style>
+    <script>
+      var pos = 0
+      var box = document.getElementById('box')
+      var t = setInterval(move, 10)
+      function move() {
+        if (pos >= 540) {
+          clearInterval(t)
+        } else {
+          pos += 1
+
+          box.style.left = pos + 'px'
+        }
+      }
+    </script>
+    <div id="container">
+      <div id="box"></div>
+    </div>
+  </body>
+</html>

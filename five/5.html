@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>五、JavaScript中的对象</title>
+  </head>
+  <script>
+    var person = {
+      name: 'John',
+      age: 31,
+      favColor: 'green',
+      height: 183
+    }
+    var x = person.age
+    var y = person['age']
+    alert(x)
+    delete person['age']
+    var c = person['age']
+    alert(c)
+    //JavaScript的内置长度属性用于计算属性或字符串中的字符数。
+    var course = { name: 'JS', lessons: 54 }
+    console.log(course.name.length)
+    //对象方法
+    var a = 'age'
+    var myObj = {
+      name: 'Loen',
+      age: '28',
+      eat: function() {
+        return "I'm eating"
+      }
+    }
+    console.log(myObj['name'])
+    console.log(myObj[a]) // 可以用变量访问对象属性, 这里返回 28
+    console.log(myObj['eat']()) // 返回 I'm eating
+    //对象构造器
+    function person(firstname, lastname, age, eyecolor) {
+      this.firstname = firstname
+      this.lastname = lastname
+      this.age = age
+      this.eyecolor = eyecolor
+    }
+    //对象初始化
+    var John = {
+      name: 'John',
+      age: 25
+    }
+    var Loen = {
+      name: 'Loen',
+      age: 28
+    }
+    //方法
+    function person(name, age) {
+      this.name = name
+      this.age = age
+      this.yearOfBirth = bornYear
+    }
+    function bornYear() {
+      return new Date().getFullYear() - this.age
+    }
+  </script>
+  <body></body>
+</html>

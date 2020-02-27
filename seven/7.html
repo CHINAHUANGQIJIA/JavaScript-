@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>七、JavaScript核心对象</title>
+  </head>
+  <body>
+    <script>
+      //String对象定义
+      var txt = new String('string')
+      // 或者更简单方式：
+      var txt = 'string'
+      //String对象方法
+      var str = 'Hello, Nier'
+      var a = str.toLowerCase() // 把字符串转为小写
+      var b = str.toUpperCase() // 吧字符串转为大写
+      var c = '   Hello world '.trim() //去掉字符串两边的空白
+      var str = 'Hello world, welcome to the w3cschool.'
+      var n = str.indexOf('welcome') // 13
+      var c = str.indexOf('loen') // -1
+      var str = 'Mr Blue has a blue house and a blue car and a blue hat'
+      var str = 'Hello world!'
+      document.write(a + '<br>')
+      document.write(b + '<br>')
+      document.write(n + '<br>')
+      document.write(c + '<br>')
+      document.write(str.substring(3) + '<br>')
+      document.write(str.substring(3, 7))
+      //Window 对象属性
+      var winInnerHeight = window.innerHeight
+      var winOuterWidth = window.outerWidth
+      var winScreenLeft = window.screenLeft
+      //Window 对象方法
+      function openWin() {
+        myWindow = window.open('', '', 'width=200,height=100')
+        myWindow.document.write("<p>这是'我的窗口'</p>")
+        myWindow.focus()
+      }
+      var myVar
+      function myFunction() {
+        myVar = setTimeout(function() {
+          alert('Hello')
+        }, 3000)
+      }
+
+      function myStopFunction() {
+        clearTimeout(myVar)
+      }
+
+      // Math对象
+      var number = Math.sqrt(4)
+      document.write(number + '<br>')
+      var n = prompt('请输入一个数字:', '')
+      var answer = Math.sqrt(n)
+      alert('数字' + n + ' 的平方根是: ' + answer)
+      //ﬂoor() 方法
+      var x = Math.round(20.49)
+      document.write(x + '<br>')
+
+      //Date对象使用
+      var d = new Date()
+      document.write(d + '<br>')
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>json</title>
+  </head>
+  <body>
+    <h2>JavaScript 创建 JSON 对象</h2>
+    <p>
+      网站名称: <span id="jname"></span><br />
+      网站地址: <span id="jurl"></span><br />
+      网站 slogan: <span id="jslogan"></span><br />
+    </p>
+    <script>
+      //JSON.parse() 方法
+      JSON.parse('{"1": 1, "2": 2,"3": {"4": 4, "5": {"6": 6}}}', function(k, v) {
+        console.log(k)
+        return v
+      })
+      //JSON.stringify() 方法
+      var str = { name: 'baidu', site: 'http://www.baidu.com' }
+      str_pretty1 = JSON.stringify(str)
+      document.write('只有一个参数情况：')
+      document.write('<br>')
+      document.write('<pre>' + str_pretty1 + '</pre>')
+      document.write('<br>')
+      str_pretty2 = JSON.stringify(str, null, 4)
+      document.write('使用参数情况：')
+      document.write('<br>')
+      document.write('<pre>' + str_pretty2 + '</pre>')
+      //json小例子
+      var JSONObject = {
+        name: '杰佛i微积分',
+        url: '1559022933mjsdkal',
+        slogan: '十分艰苦撒旦发回来看萨芬'
+      }
+      document.getElementById('jname').innerHTML = JSONObject.name
+      document.getElementById('jurl').innerHTML = JSONObject.url
+      document.getElementById('jslogan').innerHTML = JSONObject.slogan
+    </script>
+  </body>
+</html>

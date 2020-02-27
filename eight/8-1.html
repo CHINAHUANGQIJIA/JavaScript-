@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用dom</title>
+  </head>
+  <body>
+    <div id="demo">
+      <p>一些文本</p>
+      <p>另一些文本</p>
+    </div>
+    <img id="my-img" src="../image/中国疫情图.png" alt="" />
+
+    <div id="demoa" style="width:200px">一些文本</div>
+    <div id="demos">一些</div>
+
+    <script>
+      var a = document.getElementById('demo')
+      var arr = a.childNodes
+      for (var x = 0; x < arr.length; x++) {
+        arr[x].innerHTML = '新的文本'
+      }
+      //改变属性a
+      var el = document.getElementById('my-img') // 通过id="my-img"获取元素
+      el.src = '../image/观察者模式简介.png'
+      //改变样式
+      var x = document.getElementById('demoa')
+      x.style.color = '6600FF'
+      x.style.width = '100px' //创建一个新的段落
+      //添加和移除元素
+      var p = document.createElement('p')
+      var node = document.createTextNode('一些新的文本') //添加文本到段落
+      p.appendChild(node)
+      var div = document.getElementById('demos') //将段落添加到div中
+      div.appendChild(p)
+      //移除元素
+      var parent = document.getElementById('demo')
+      var child = document.getElementById('p1')
+      parent.removeChild(child)
+      //替换元素
+      var p = document.createElement('p')
+      var node = document.createTextNode('这是新的文本')
+      p.appendChild(node)
+      var parent = document.getElementById('demo')
+      var child = document.getElementById('p1')
+      parent.replaceChild(p, child)
+    </script>
+  </body>
+</html>
